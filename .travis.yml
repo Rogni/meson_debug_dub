@@ -1,0 +1,17 @@
+dist: bionic
+sudo: required
+language: generic
+
+
+install:
+  - travis_retry sudo apt-get update
+  - travis_wait 30 sudo apt-get -y install -qq ninja snapd python3 ldc
+  - travis_wait 30 sudo snap install dub --classic
+
+script:
+  - git clone https://github.com/Rogni/meson.git meson -b debug_dub
+  - dub fetch ddbc
+  - dub build ddbc
+  - dub list
+  - DC=ldc2 python3 meson/meson.py build
+  
