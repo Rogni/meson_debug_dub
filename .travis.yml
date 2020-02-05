@@ -13,7 +13,5 @@ script:
   - dub fetch ddbc
   - dub build ddbc
   - dub list
-  - ls /home/travis/.dub/packages/derelict-pq-2.2.0/derelict-pq/lib/
-  - ls /home/travis/.dub/packages/derelict-util-2.0.6/derelict-util/lib/
   - DC=ldc2 python3 meson/meson.py build
   
