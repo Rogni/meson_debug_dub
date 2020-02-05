@@ -13,6 +13,8 @@ script:
   - dub fetch ddbc
   - dub build ddbc
   - dub list
-  - find $HOME/.dub -iname libDerelictUtil.a
+  - find $HOME/.dub -name libDerelictPQ.a
+  - find $HOME/.dub -name libDerelictUtil.a
+  - find $HOME/.dub -name libvibe_core.a
   - DC=ldc2 python3 meson/meson.py build
   
