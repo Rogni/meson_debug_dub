@@ -13,5 +13,6 @@ script:
   - dub fetch ddbc
   - dub build ddbc
   - dub list
+  - find $HOME/.dub -iname libDerelictUtil.a
   - DC=ldc2 python3 meson/meson.py build
   
