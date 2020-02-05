@@ -13,8 +13,9 @@ script:
   - dub fetch ddbc
   - dub build ddbc
   - dub list
-  - find $HOME/.dub -name libDerelictPQ.a
-  - find $HOME/.dub -name libDerelictUtil.a
-  - find $HOME/.dub -name libvibe_core.a
+  - FIND_IN_DUB='find /home/travis/.dub/packages -name'
+  - $FIND_IN_DUB libDerelictPQ.a
+  - $FIND_IN_DUB libDerelictUtil.a
+  - $FIND_IN_DUB -name libvibe_core.a
   - DC=ldc2 python3 meson/meson.py build
   
