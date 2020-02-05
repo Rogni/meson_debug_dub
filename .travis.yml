@@ -11,8 +11,7 @@ install:
 
 script:
   - git clone https://github.com/Rogni/meson.git meson -b debug_dub
-  - dub fetch ddbc
-  - dub build ddbc
+  - dub build ddbc -y
   - dub list
   - find $HOME/.dub -iname libDerelictUtil.a
   - DC=ldc2 python3 meson/meson.py build
